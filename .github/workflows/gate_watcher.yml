@@ -1,0 +1,12 @@
+name: Gate Watcher
+on:
+  workflow_run:
+    workflows: [Gate Trigger]
+    types: [completed]
+permissions:
+  checks: write
+jobs:
+  w:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo watcher-ran
